@@ -1,0 +1,239 @@
+/* Typographie */
+@font-face {
+    font-family: 'custom';
+    src: url('../FONTS/Rajdhani-Regular.ttf');
+}
+
+* {
+    font-family: 'custom';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Corps de la page */
+body {
+    color: #fff;
+    background-image: url('../IMG/BG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* En-tête */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #80503fab;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 1000;
+}
+
+#header {
+    color: white;
+}
+
+#header img {
+    width: 2rem;
+    filter: invert();
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.button-container {
+    display: flex;
+    text-align: center;
+    gap: 1rem;
+}
+
+/* Boutons */
+.button-choices, input[type="submit"], .update, .delete {
+    color: #80503f;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.button-choices:hover, input[type="submit"]:hover, .update:hover, .delete:hover {
+    filter: opacity(50%);
+}
+
+.update {
+    background-color: rgb(27, 152, 27);
+    color: white;
+}
+
+.delete {
+    background-color: rgb(152, 27, 27);
+    color: white;
+}
+
+/* Formulaires */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #80503f;
+    color: #80503f;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    border-radius: 1rem;
+    background-color: #80503fab;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #202020;
+    transform: scale(1.1);
+}
+
+/* Messages */
+.message-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message-error {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Conteneur de livres */
+.livres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.livre {
+    background-color: #80503fab;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.livre h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.livre p {
+    margin: 5px 0;
+    color: #fff;
+}
+
+/* Pied de page */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #80503fab;
+    border-radius: 1rem 1rem 0 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+#footer {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .livre {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .button-choices, input[type="submit"], .update, .delete {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    #header, #footer {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .livre {
+        flex: 1 1 100%;
+    }
+}
